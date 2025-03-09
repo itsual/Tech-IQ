@@ -1,15 +1,7 @@
-Here’s the expanded version in markdown (`.md`) format, structured as a detailed blog post with technical depth while keeping it approachable:
-
-```markdown
-# Tech IQ #2: The Hidden Engine Behind “Simple” AI Queries  
+# Tech IQ #1: The Hidden Engine Behind “Simple” AI Queries  
 *Why "Just Connect the AI to Our Data" Isn’t a One-Click Solution*  
 
-![LLM Workflow](https://via.placeholder.com/800x400.png?text=LLM+Workflow+Diagram)  
-*What users see vs. what engineers build. Spoiler: It’s not magic.*  
-
----
-
-## Executive Summary  
+## Topic of Discussion
 Natural language queries like *“Show me last quarter’s sales trends”* feel simple, but enabling them requires **months of work** across data engineering, infrastructure, and AI teams. Here’s why it’s closer to building a self-driving car than flipping a switch.  
 
 ---
@@ -232,16 +224,101 @@ Use bullet points, no jargon."
 
 ---
 
-**Next in Tech IQ Series**: *“Why Your Data Is a Mess (And How to Fix It in 3 Steps)”*  
+## Detailed Workflow of Text To SQL Use Case via LLM
 
-*Written by [Your Name], simplifying tech for decisive leadership. Connect with me on [LinkedIn] for real-talk AI insights.*  
-``` 
+```mermaid
+flowchart TD
+    subgraph "One-Time Setup Activities"
+        A1[Extract Table Schemas from DWH] --> A2[Generate Data Dictionary]
+        A2 --> A3[Document Table Relationships]
+        A3 --> A4[Document Primary/Foreign Keys]
+        A4 --> A5[Identify Common Query Patterns]
+        A5 --> A6[Set up SQL Query Templates]
+        
+        B1[Transform Schema into LLM-Friendly Format] --> B2[Create Column Descriptions]
+        B2 --> B3[Generate Sample Queries]
+        B3 --> B4[Document Business Logic Rules]
+        
+        C1[Create Vector Embeddings of Schema] --> C2[Create Vector Embeddings of Data Dictionary]
+        C2 --> C3[Create Vector Embeddings of Relationships]
+        C3 --> C4[Store Embeddings in Vector Database]
+        
+        D1[Set up Cloud Infrastructure] --> D2[Configure API Security]
+        D2 --> D3[Set Rate Limits]
+        D3 --> D4[Configure LLM Access]
+        D4 --> D5[Set up DWH Connection]
+        D5 --> D6[Define Result Size Limitations]
+        
+        E1[Test System with Sample Queries] --> E2[Fine-tune Prompt Templates]
+        E2 --> E3[Optimize Token Usage]
+        E3 --> E4[Set up Monitoring]
+    end
+    
+    subgraph "Query Processing Flow"
+        Q1[User Enters Natural Language Query] --> Q2[Preprocess Query Text]
+        Q2 --> Q3[Check Query for Ambiguities]
+        
+        Q3 -- Ambiguous --> Q3A[Ask User for Clarification]
+        Q3A --> Q2
+        
+        Q3 -- Clear --> Q4[Retrieve Relevant Schema Context]
+        Q4 --> Q5[Query Vector DB for Similar Patterns]
+        Q5 --> Q6[Build Context Window with Schema + Dictionary]
+        
+        Q6 --> Q7{Token Count Check}
+        Q7 -- Exceeds Limit --> Q8[Reduce Context or Split Query]
+        Q8 --> Q6
+        
+        Q7 -- Within Limit --> Q9[Send to LLM with Prompt Template]
+        Q9 --> Q10[LLM Generates SQL Query]
+        
+        Q10 --> Q11[Validate SQL Query Structure]
+        Q11 -- Invalid --> Q12[Regenerate with Feedback]
+        Q12 --> Q9
+        
+        Q11 -- Valid --> Q13[Check Query Safety]
+        Q13 -- Unsafe --> Q14[Reject and Regenerate]
+        Q14 --> Q9
+        
+        Q13 -- Safe --> Q15[Optimize Query for Performance]
+        Q15 --> Q16[Execute Query against DWH]
+        
+        Q16 -- Error --> Q17[Analyze Error and Retry]
+        Q17 --> Q10
+        
+        Q16 -- Success --> Q18[Check Result Size]
+        Q18 -- Too Large --> Q19[Apply Limits or Aggregation]
+        Q19 --> Q16
+        
+        Q18 -- Manageable --> Q20[Format Result Set]
+        Q20 --> Q21[Send Results + Query to LLM]
+        
+        Q21 --> Q22[Generate Natural Language Summary]
+        Q22 --> Q23[Check for Hallucinations]
+        
+        Q23 -- Contains Hallucinations --> Q24[Regenerate Summary]
+        Q24 --> Q22
+        
+        Q23 -- Valid --> Q25[Format Response with Data Visualizations]
+        Q25 --> Q26[Return Response to User]
+        
+        Q26 --> Q27[Log Interaction for Learning]
+    end
+    
+    %% Connect the subgraphs
+    E4 -.-> Q1
+    
+    classDef setupNodes fill:#e1f5fe,stroke:#4fc3f7,stroke-width:1px;
+    classDef flowNodes fill:#f3e5f5,stroke:#ce93d8,stroke-width:1px;
+    classDef errorNodes fill:#ffebee,stroke:#ef9a9a,stroke-width:1px;
+    classDef successNodes fill:#e8f5e9,stroke:#a5d6a7,stroke-width:1px;
+    
+    class A1,A2,A3,A4,A5,A6,B1,B2,B3,B4,C1,C2,C3,C4,D1,D2,D3,D4,D5,D6,E1,E2,E3,E4 setupNodes;
+    class Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q13,Q15,Q16,Q18,Q20,Q21,Q22,Q23,Q25,Q26,Q27 flowNodes;
+    class Q3A,Q12,Q14,Q17,Q19,Q24 errorNodes;
+    class Q25,Q26 successNodes;
+```
+---
 
-This version:  
-1. Uses markdown formatting (headers, tables, mermaid diagrams, code blocks)  
-2. Adds real-world examples, cost breakdowns, and failure stories  
-3. Includes visual placeholders and architecture diagrams  
-4. Balances technical depth with executive relevance  
-5. Adds FAQs and ROI metrics for leadership context  
+Simplifying tech for decisive leadership. Connect with me on [LinkedIn](https://www.linkedin.com/in/arockialiborious/) for real-talk AI insights.
 
-To use: Save as `tech-iq-2.md`, add actual images/charts, and customize the [Your Name]/[LinkedIn] fields.
