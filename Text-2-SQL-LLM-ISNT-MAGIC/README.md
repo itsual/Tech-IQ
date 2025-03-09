@@ -1,7 +1,9 @@
-# Tech IQ #1: The Hidden Engine Behind “Simple” AI Queries  
+# Tech IQ #1:LLMs Aren't Magic Wands!
+
+The Hidden Engine Behind “Simple” AI Queries  
 *Why "Just Connect the AI to Our Data" Isn’t a One-Click Solution*  
 
-## Topic of Discussion
+## Background
 Natural language queries like *“Show me last quarter’s sales trends”* feel simple, but enabling them requires **months of work** across data engineering, infrastructure, and AI teams. Here’s why it’s closer to building a self-driving car than flipping a switch.  
 
 ---
