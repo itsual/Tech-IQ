@@ -1,12 +1,7 @@
-**Tech IQ #3: CI/CD for ML—It’s Not Just “Pushing Buttons”**  
-*Demystifying the Assembly Line That Turns Code Into AI Models*  
+**Tech IQ #2: CI/CD for ML—It’s Not Just “Pushing Buttons”**  
+*Demystifying the Assembly Line That Turns Code Into AI Models* 
 
-![CI/CD Pipeline](https://via.placeholder.com/800x400.png?text=CI/CD+Pipeline+Metaphor)  
-*Imagine an assembly line for cars, but for machine learning models.*  
-
----
-
-## **Executive Summary**  
+## **Background**  
 CI/CD (Continuous Integration/Continuous Deployment) is the **automated factory** that turns raw code into production-ready AI models. For leaders, think of it as:  
 - **Quality control** for code  
 - **Assembly line** for updates  
