@@ -82,7 +82,7 @@ An LLM once interpreted “top products” as “most reviewed,” not “highes
 ---
 
 #### 4. Infrastructure: Building the Highway  
-**Cloud Architecture**:  
+**Cloud Architecture (Simplified)**:  
 ```mermaid  
 graph TB  
   User --> APIGateway  
@@ -92,12 +92,96 @@ graph TB
   DataWarehouse --> Redshift  
   Lambda --> LLM("LLM (GPT-4/Claude)")  
   LLM --> Visualization("PowerBI/Tableau")  
-```  
+```
 
 **Security Layers**:  
 - **Data Masking**: Automatically redact `credit_card` columns.  
 - **Query Sandboxing**: Run all SQL in read-only containers.  
 
+**Cloud Architecture (Detailed)**:  
+```mermaid
+flowchart TB
+    User([User]) -->|Natural Language Query| APIGateway[API Gateway]
+    
+    subgraph "Query Processing Layer"
+        APIGateway -->|Authentication & Rate Limiting| QueryService[Lambda: Query Service]
+        QueryService -->|Query Text| QueryPreprocessor[Lambda: Query Preprocessor]
+        QueryPreprocessor -->|Preprocessed Query| ContextBuilder[Lambda: Context Builder]
+        
+        ContextBuilder -->|Retrieve Metadata| VectorDB[(Vector Database)]
+        VectorDB -->|Schema & Dictionary Embeddings| ContextBuilder
+        
+        ContextBuilder -->|Query + Context| PromptManager[Lambda: Prompt Manager]
+        PromptManager -->|Optimized Prompt| LLMService[Lambda: LLM Orchestrator]
+        
+        LLMService -->|SQL Generation Request| LLM[LLM Service]
+        LLM -->|Generated SQL| SQLValidator[Lambda: SQL Validator]
+        
+        SQLValidator -->|Invalid SQL| LLMService
+        SQLValidator -->|Valid SQL| QueryExecutor[Lambda: Query Executor]
+    end
+    
+    subgraph "Data Access Layer"
+        QueryExecutor -->|Execute Query| ConnectionPool[Connection Pool Manager]
+        ConnectionPool -->|DB Connection| DataWarehouse[(Data Warehouse)]
+        DataWarehouse --- Redshift[(Redshift)]
+        DataWarehouse --- Snowflake[(Snowflake)]
+        
+        QueryExecutor -->|Large Results| ResultProcessor[Lambda: Result Processor]
+        ResultProcessor -->|Filtered/Aggregated Results| ResponseGenerator[Lambda: Response Generator]
+        
+        QueryExecutor -->|Manageable Results| ResponseGenerator
+    end
+    
+    subgraph "Response Generation Layer"
+        ResponseGenerator -->|Results + Query| LLMService
+        LLMService -->|Summary Generation Request| LLM
+        LLM -->|Natural Language Summary| HallucinationDetector[Lambda: Hallucination Detector]
+        
+        HallucinationDetector -->|Contains Hallucinations| LLMService
+        HallucinationDetector -->|Valid Summary| ResponseFormatter[Lambda: Response Formatter]
+        
+        ResponseFormatter -->|Format Response| Visualization[Visualization Service]
+        Visualization -->|Visual Response| User
+    end
+    
+    subgraph "Management & Monitoring"
+        CloudWatch[CloudWatch] -->|Metrics & Logs| QueryService
+        CloudWatch -->|Metrics & Logs| LLMService
+        CloudWatch -->|Metrics & Logs| QueryExecutor
+        
+        FeedbackCollector[Lambda: Feedback Collector] -->|User Feedback| LearningSystem[Learning System]
+        LearningSystem -->|Improvement Insights| PromptManager
+        
+        ConfigManager[Configuration Manager] -->|Settings| PromptManager
+        ConfigManager -->|Settings| LLMService
+        ConfigManager -->|Settings| QueryExecutor
+    end
+    
+    subgraph "Setup & Maintenance"
+        SchemaExtractor[Schema Extractor] -->|DWH Metadata| SchemaProcessor[Schema Processor]
+        SchemaProcessor -->|Processed Schema| EmbeddingGenerator[Embedding Generator]
+        EmbeddingGenerator -->|Schema Embeddings| VectorDB
+        
+        DictionaryManager[Dictionary Manager] -->|Business Terms| EmbeddingGenerator
+        DictionaryManager -->|Business Terms| VectorDB
+    end
+    
+    classDef userNode fill:#f9d71c,stroke:#f9d71c,stroke-width:2px,color:black;
+    classDef apiNode fill:#86b5f7,stroke:#4285f4,stroke-width:2px;
+    classDef lambdaNode fill:#e7f2fa,stroke:#42a5f5,stroke-width:1px;
+    classDef storageNode fill:#fad2c3,stroke:#f57c00,stroke-width:1px;
+    classDef llmNode fill:#c5e1a5,stroke:#7cb342,stroke-width:1px;
+    classDef monitoringNode fill:#ffcc80,stroke:#ff9800,stroke-width:1px;
+    
+    class User userNode;
+    class APIGateway apiNode;
+    class QueryService,QueryPreprocessor,ContextBuilder,PromptManager,LLMService,SQLValidator,QueryExecutor,ResultProcessor,ResponseGenerator,HallucinationDetector,ResponseFormatter,FeedbackCollector lambdaNode;
+    class VectorDB,DataWarehouse,Redshift,Snowflake storageNode;
+    class LLM,Visualization llmNode;
+    class CloudWatch,ConfigManager,SchemaExtractor,SchemaProcessor,EmbeddingGenerator,DictionaryManager,LearningSystem monitoringNode;
+
+```
 ---
 
 ### Phase 2: What Happens When You Ask a Question *(300ms Journey)*  
