@@ -55,11 +55,57 @@ Decision (e.g., “Stock price = $142”, “Image = defective product”).
 
 **Math Simplified**: 
 
-Output = Activation(w₁x₁ + w₂x₂ + ... + wₙxₙ + b)
+`Output = Activation(w₁x₁ + w₂x₂ + ... + wₙxₙ + b)`
 
 *Example*:  
 - If `w₁x₁ + ... + b` = 5.2 and **Activation = ReLU**, Output = 5.2.  
-- If it’s -3.7, Output = 0 (ReLU kills negative values).  
+- If it’s -3.7, Output = 0 (ReLU kills negative values).
+
+**Data Flow Through A Neural Network**
+
+```mermaid
+graph TD
+    subgraph "Input Layer"
+        A[Raw Business Data] --> B1[Input Neuron 1]
+        A --> B2[Input Neuron 2]
+        A --> B3[Input Neuron 3]
+    end
+    
+    subgraph "Data Transformation"
+        B1 --> C1["1. Weight Multiplication"]
+        B2 --> C2["1. Weight Multiplication"]
+        B3 --> C3["1. Weight Multiplication"]
+        
+        C1 --> D["2. Sum All Inputs"]
+        C2 --> D
+        C3 --> D
+        
+        D --> E["3. Activation Function<br>(ReLU, Sigmoid, etc)"]
+    end
+    
+    subgraph "Hidden Layer"
+        E --> F1[Hidden Neuron 1]
+        E --> F2[Hidden Neuron 2]
+        
+        F1 --> G1["Pattern Detection"]
+        F2 --> G2["Pattern Detection"]
+    end
+    
+    subgraph "Output Layer"
+        G1 --> H[Output Neuron]
+        G2 --> H
+        
+        H --> I["Business Decision<br>(Prediction/Classification)"]
+    end
+    
+    subgraph "Learning Process"
+        I --> J["Compare Prediction<br>with Actual Results"]
+        J --> K["Calculate Error"]
+        K --> L["Adjust Weights"]
+        L --> |"Feedback Loop"| B1
+    end
+  ```
+ 
 ---
 
 ## **Key Architectures & Business Impact**  
@@ -172,7 +218,8 @@ Output = Activation(w₁x₁ + w₂x₂ + ... + wₙxₙ + b)
 ### **3. Speed to Market**  
 - **Case Study**: A retailer cut product categorization time from 2 weeks to 2 hours by switching from RNNs to CNNs.  
 
-### **Decision Tree - Which Neural network Architecture to Choose?
+### **Decision Tree - Which Neural network Architecture to Choose?**
+
 ```mermaid
 graph TD
     Start[START HERE] --> DataQ{What type of data are you working with?}
@@ -319,4 +366,5 @@ graph TD
 2. **Cost Scales with Complexity**: A $10M model isn’t “better”—it’s just fit for specific tasks.  
 3. **Think Long-Term**: Transformers future-proof generative AI but require infrastructure.  
 
+Simplifying tech for decisive leadership. Connect with me on [LinkedIn](https://www.linkedin.com/in/arockialiborious/) for real-talk AI insights.
 ---  
