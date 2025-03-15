@@ -51,3 +51,5 @@ flowchart LR
     class Governance,G1,G2,G3,G4 governance;
     class Outcomes,O1,O2,O3,O4 outcomes;
   ```
+
+Simplifying tech for decisive leadership. Connect with me on [LinkedIn](https://www.linkedin.com/in/arockialiborious/) for real-talk AI insights.
