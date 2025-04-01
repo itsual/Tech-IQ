@@ -3,7 +3,7 @@
 
 ---
 
-## 🎯 Executive Summary  
+## 🎯 Background 
 Choosing AI infrastructure is a **strategic business decision**, not just technical implementation. Key insights every leader needs:  
 - **BFloat16** delivers 99% of FP32 accuracy at **half the cost**  
 - Using **FP16** on LLaMA-2 risks 5% accuracy drop vs BF16  
