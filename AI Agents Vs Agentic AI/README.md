@@ -60,10 +60,9 @@ Automation and AI are not interchangeable. **Automation** follows rules; **AI** 
   - Supply chain optimization  
   - Personalized healthcare  
 
+**Evolution of Automation**
 ```mermaid
 flowchart TD
-    %% Title Section
-    title[Automation Evolution: From Process Automation to Agentic AI]
     
     %% Flow Structure - Four columns for comparison
     subgraph "ML Process Automation"
@@ -119,9 +118,7 @@ flowchart TD
     class AA1,AA2,AA3,AA4,AA5 ai_agent
     class AG1,AG2,AG3,AG4,AG5 agentic
     class PA99,PA100,PA101,RPA99,RPA100,RPA101,AA99,AA100,AA101,AG99,AG100,AG101 char
-    ```
-
-
+```
 ---
 
 ## Tier Comparison: Capabilities & Impact  
@@ -229,8 +226,7 @@ flowchart TD
     class DS1,DS2,DS3,DS4,S2 data
     class K1,K2,K3 knowledge
     class M1,M2,M3,M4 monitoring
-    ```
-
+```
 
 **Sample Multi-Agent System Architecture Process Flow Diagram**
 ```mermaid
@@ -310,8 +306,7 @@ flowchart TD
     class T1,T2,T3,T4 tools
     class MM,SM,LM,KM memory
     class QA,OR qa
-    ```
-
+```
 
 ---
 
@@ -329,6 +324,7 @@ flowchart TD
 5. Pilot **Agentic AI** in one high-impact area (e.g., fraud detection).  
 6. Establish AI ethics governance framework.  
 
+![Industry Applications](https://github.com/itsual/Tech-IQ/blob/main/Agentic%20Applications%20-1.png)
 ---
 
 ## Tools & Frameworks  
@@ -340,7 +336,6 @@ flowchart TD
 | **Agentic AI**    | AutoGPT, BabyAGI, ADK     | Custom solutions       |  
 
 ```mermaid
-
 flowchart LR
     %% Main Categories
     Title[Python Frameworks & Tools for Automation & AI]
@@ -469,8 +464,7 @@ flowchart LR
     class RPATools,RP1,RP2,RP3 rpa
     class AIAgents,AG1,AG2,AG3 agent
     class AgenticAI,AA1,AA2,AA3 agentic
-    ```
-
+```
 ---
 
 ## Risks & Mitigations  
