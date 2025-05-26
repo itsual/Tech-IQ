@@ -1,4 +1,4 @@
-**Tech IQ #2: CI/CD for ML—It’s Not Just “Pushing Buttons”**  
+# **Tech IQ #2: CI/CD for ML—It’s Not Just “Pushing Buttons”**  
 *Demystifying the Assembly Line That Turns Code Into AI Models* 
 
 ## **Background**  
