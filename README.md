@@ -7,7 +7,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ## 🔍 Tech-IQ Series Highlights
 
-### 🧙‍♂️ Tech IQ #1: LLMs Aren't Magic Wands!
+### 🧙‍♂️ [Tech IQ #1: LLMs Aren't Magic Wands!](https://github.com/itsual/Tech-IQ/tree/main/Text-2-SQL-LLM-ISNT-MAGIC)
 📂 **Topic:** `Text-2-SQL-LLM-ISNT-MAGIC`  
 🧠 **Insight:** Text-to-SQL with LLMs isn't plug-and-play magic. It demands schema awareness, guardrails, and validation.  
 🔧 **Reality:** LLMs are autocomplete machines, not certified SQL analysts. Expect hallucinations unless you structure the context carefully.
@@ -16,7 +16,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🚀 Tech IQ #2: CI/CD for ML—It’s Not Just “Pushing Buttons”  
+### 🚀 [Tech IQ #2: CI/CD for ML—It’s Not Just “Pushing Buttons”](https://github.com/itsual/Tech-IQ/tree/main/CI-CD)
 📂 **Topic:** `CI-CD`  
 🧠 **Insight:** CI/CD in ML includes retraining triggers, dataset versioning, evaluation thresholds—not just Git commits.  
 🔧 **Reality:** ML CI/CD pipelines look like DevOps with data and statistical checkpoints woven in.
@@ -25,7 +25,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🛠️ Tech IQ #3: Kubernetes, Containers & the Hidden Plumbing of AI  
+### 🛠️ [Tech IQ #3: Kubernetes, Containers & the Hidden Plumbing of AI](https://github.com/itsual/Tech-IQ/tree/main/Kubernetes%20Containers%20%26%20More)
 📂 **Topic:** `Kubernetes Containers & More`  
 🧠 **Insight:** Kubernetes is not a buzzword—it's the invisible backbone that scales AI, ensures resilience, and manages workloads.  
 🔧 **Reality:** No YAML, no scale. Your model may be 99% accurate but 100% offline without orchestration.
@@ -34,7 +34,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🧬 Tech IQ #4: How Neural Networks Work – From Neurons to Transformers  
+### 🧬 [Tech IQ #4: How Neural Networks Work – From Neurons to Transformers](https://github.com/itsual/Tech-IQ/tree/main/Neural%20Network)
 📂 **Topic:** `Neural Network`  
 🧠 **Insight:** Neural networks mimic neurons in name, but function as sophisticated algebraic graph flows.  
 🔧 **Reality:** From perceptrons to transformers, the secret lies in how information is weighted and passed—not in “intelligence.”
@@ -43,7 +43,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### ⚙️ Tech IQ #5: AI Compute & Precision — A Leader's Infrastructure Guide  
+### ⚙️ [Tech IQ #5: AI Compute & Precision — A Leader's Infrastructure Guide](https://github.com/itsual/Tech-IQ/tree/main/GPU%20TPU%20Precision%20etc)
 📂 **Topic:** `GPU TPU Precision etc`  
 🧠 **Insight:** Precision (FP32 vs INT8) and hardware (GPU vs TPU) impact cost, speed, and model behavior.  
 🔧 **Reality:** Strategic leaders must align model goals with compute constraints—not overbuy compute horsepower.
@@ -52,7 +52,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🤖 Tech IQ #6: Agentic AI ≠ AI Agents  
+### 🤖 [Tech IQ #6: Agentic AI ≠ AI Agents](https://github.com/itsual/Tech-IQ/tree/main/AI%20Agents%20Vs%20Agentic%20AI)
 📂 **Topic:** `AI Agents Vs Agentic AI`  
 🧠 **Insight:** An "agent" calls APIs. An agentic AI sets goals, reasons, adapts. Huge difference.  
 🔧 **Reality:** Agentic AI combines memory, planning, context awareness. It’s not automation—it’s orchestration.
@@ -61,7 +61,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🛡️ Tech IQ #7: Red Teaming vs Closed UAT — LLMs Need Both  
+### 🛡️ [Tech IQ #7: Red Teaming vs Closed UAT — LLMs Need Both](https://github.com/itsual/Tech-IQ/tree/main/UAT%20vs%20Red%20Teaming)
 📂 **Topic:** `UAT vs Red Teaming`  
 🧠 **Insight:** Closed UAT validates use-case readiness. Red Teaming finds vulnerabilities—prompt injections, jailbreaks, and adversarial QA.  
 🔧 **Reality:** UAT = “does it work?” / Red Team = “how can it break?”
