@@ -85,8 +85,6 @@ While Closed User Group UAT ensures business functionality, Red Teaming safeguar
 - **Shadow IT**: Employees misuse LLM for unauthorized tasks  
 - **Compliance Gaps**: Finance LLM giving unapproved investment advice  
 
-
-
 ---
 
 ## Implementation Blueprint  
@@ -103,6 +101,8 @@ While Closed User Group UAT ensures business functionality, Red Teaming safeguar
 - [ ] Test 500+ adversarial prompts  
 - [ ] Audit training data for toxic content  
 - [ ] Simulate real-world abuse (e.g., phishing, harassment)  
+
+[**Checkout the Red Team Tools**](https://github.com/itsual/Tech-IQ/blob/main/UAT%20vs%20Red%20Teaming/AI%20Red%20Teaming%20Tools.html)
 
 ---
 
