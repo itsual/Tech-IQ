@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Red Team Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff416c, #ff4757);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tools-grid {
+            padding: 40px;
+        }
+        
+        .category {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #e74c3c;
+        }
+        
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tools-table th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .tools-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+        
+        .tools-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .tools-table tr:hover {
+            background: #e3f2fd;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .tool-link {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .tool-description {
+            line-height: 1.6;
+            color: #34495e;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 2px;
+        }
+        
+        .tag.open-source {
+            background: #27ae60;
+        }
+        
+        .tag.commercial {
+            background: #f39c12;
+        }
+        
+        .tag.research {
+            background: #9b59b6;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .watermark {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            opacity: 0.1;
+            z-index: 1000;
+            pointer-events: none;
+            width: 120px;
+            height: auto;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ff7675, #fd79a8);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #d63031;
+        }
+        
+        .warning-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ AI Red Team Arsenal</h1>
+            <p>Comprehensive Tools for Testing & Securing AI Applications</p>
+        </div>
+        
+        <div class="tools-grid">
+            <div class="warning-box">
+                <h3>⚠️ Ethical Use Notice</h3>
+                <p>These tools are for legitimate security testing, research, and defensive purposes only. Always obtain proper authorization before testing AI systems you don't own.</p>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">🎯 Prompt Testing & Evaluation</h2>
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Tool</th>
+                            <th style="width: 75%;">What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tool-name">OpenAI Evals</div>
+                                <div class="tool-link">github.com/openai/evals</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Framework to test prompts and edge cases systematically. Provides standardized evaluation metrics and benchmarks for LLM performance and safety.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">PromptFoo</div>
+                                <div class="tool-link">promptfoo.dev</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Test and evaluate LLM outputs across multiple models and prompts. Supports automated red teaming scenarios and adversarial testing.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">LangSmith</div>
+                                <div class="tool-link">smith.langchain.com</div>
+                                <span class="tag commercial">Commercial</span>
+                            </td>
+                            <td class="tool-description">
+                                Platform for testing, evaluating, and monitoring LLM applications. Includes prompt optimization and safety testing capabilities.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Giskard</div>
+                                <div class="tool-link">giskard.ai</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Open-source testing framework for ML models including LLMs. Detects performance, bias, and security issues automatically.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">🔒 Security & Attack Detection</h2>
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Tool</th>
+                            <th style="width: 75%;">What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Rebuff</div>
+                                <div class="tool-link">github.com/protectai/rebuff</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Middleware to detect and block prompt injection attacks. Uses ML models to identify malicious prompts in real-time.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Guardrails AI</div>
+                                <div class="tool-link">guardrailsai.com</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Policy-based filters for outputs (toxicity, PII, bias, etc). Provides structured validation and correction of LLM outputs.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">LLM Guard</div>
+                                <div class="tool-link">llm-guard.com</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Comprehensive security toolkit for LLMs. Includes input/output sanitization, prompt injection detection, and content filtering.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Microsoft PyRIT</div>
+                                <div class="tool-link">github.com/Azure/PyRIT</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Python Risk Identification Tool for generative AI. Automated red teaming framework for identifying AI system vulnerabilities.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">NeMo Guardrails</div>
+                                <div class="tool-link">github.com/NVIDIA/NeMo-Guardrails</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Programmable guardrails for LLM applications. Define custom safety policies and conversation boundaries.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">🎭 Adversarial Testing</h2>
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Tool</th>
+                            <th style="width: 75%;">What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Anthropic's Constitutional AI</div>
+                                <div class="tool-link">anthropic.com</div>
+                                <span class="tag research">Research</span>
+                            </td>
+                            <td class="tool-description">
+                                Framework for training AI systems to be more helpful, harmless, and honest through constitutional methods and red teaming.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">HarmBench</div>
+                                <div class="tool-link">harmbench.org</div>
+                                <span class="tag research">Research</span>
+                            </td>
+                            <td class="tool-description">
+                                Standardized evaluation framework for automated red teaming of large language models with harmful behavior datasets.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">AdvPrompter</div>
+                                <div class="tool-link">github.com/jiaxiaojunQAQ/AdvPrompter</div>
+                                <span class="tag research">Research</span>
+                            </td>
+                            <td class="tool-description">
+                                Automated adversarial prompt generation tool for testing LLM robustness against various attack vectors.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">TextAttack</div>
+                                <div class="tool-link">textattack.readthedocs.io</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Python framework for adversarial attacks, data augmentation, and model training in NLP. Supports various attack strategies.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">📊 Monitoring & Analytics</h2>
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Tool</th>
+                            <th style="width: 75%;">What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Weights & Biases</div>
+                                <div class="tool-link">wandb.ai</div>
+                                <span class="tag commercial">Commercial</span>
+                            </td>
+                            <td class="tool-description">
+                                ML experiment tracking and model monitoring platform. Track model performance, detect drift, and monitor safety metrics.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Arize AI</div>
+                                <div class="tool-link">arize.com</div>
+                                <span class="tag commercial">Commercial</span>
+                            </td>
+                            <td class="tool-description">
+                                ML observability platform for monitoring model performance, detecting bias, and ensuring responsible AI deployment.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Evidently AI</div>
+                                <div class="tool-link">evidentlyai.com</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Open-source ML monitoring and testing. Detect data drift, model performance degradation, and bias in production systems.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Langfuse</div>
+                                <div class="tool-link">langfuse.com</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Open-source LLM engineering platform for debugging, analysis, and monitoring of LLM applications in production.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">🔍 Data & Privacy Testing</h2>
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Tool</th>
+                            <th style="width: 75%;">What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Microsoft Presidio</div>
+                                <div class="tool-link">microsoft.github.io/presidio</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Data protection and de-identification SDK. Detect and anonymize PII in text, images, and structured data.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Faker</div>
+                                <div class="tool-link">faker.readthedocs.io</div>
+                                <span class="tag open-source">Open Source</span>
+                            </td>
+                            <td class="tool-description">
+                                Generate fake data for testing purposes. Create realistic test datasets without exposing sensitive information.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tool-name">Synthesis AI</div>
+                                <div class="tool-link">synthesis.ai</div>
+                                <span class="tag commercial">Commercial</span>
+                            </td>
+                            <td class="tool-description">
+                                Generate synthetic training data for computer vision models. Test model robustness with diverse synthetic scenarios.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Remember:</strong> Red teaming is about building better, safer AI systems. Always test responsibly and within legal boundaries.</p>
+            <p style="margin-top: 10px; opacity: 0.8;">🛡️ Secure AI • 🔍 Test Thoroughly • 🚀 Deploy Safely</p>
+        </div>
+    </div>
+    
+    <!-- Watermark Logo -->
+    <svg class="watermark" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#4dd0e1"/>
+                <stop offset="50%" style="stop-color:#0288d1"/>
+                <stop offset="100%" style="stop-color:#01579b"/>
+            </linearGradient>
+        </defs>
+        
+        <!-- A Letter -->
+        <path d="M 200 650 L 300 300 L 350 300 L 450 650 L 400 650 L 380 580 L 270 580 L 250 650 Z M 290 520 L 360 520 L 325 420 Z" fill="url(#logoGrad1)"/>
+        
+        <!-- L Letter -->
+        <path d="M 500 300 L 500 650 L 650 650 L 650 600 L 550 600 L 550 300 Z" fill="#666666"/>
+        
+        <!-- Diagonal Line -->
+        <line x1="480" y1="280" x2="520" y2="670" stroke="#333333" stroke-width="8"/>
+        
+        <!-- Tagline -->
+        <text x="400" y="720" fill="#666666" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" font-weight="bold">Think. Build. Transform.</text>
+    </svg>
+</body>
+</html>
