@@ -1,4 +1,4 @@
-# Tech IQ #7: LLM Guardrails - Red Teaming vs Closed UAT  
+# Tech IQ #7: LLM Guardrails - Red Teaming vs Acceptance Testing
 *Why Your LLM Needs Ethical Hackers AND Business Users to Survive the Real World*  
 
 ---
