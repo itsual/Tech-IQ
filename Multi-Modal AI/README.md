@@ -212,23 +212,17 @@ When you combine multi-modal AI with retrieval (from Tech IQ #8 and #9), you get
 flowchart LR
     subgraph Index["Multi-Modal Index"]
         T1[Text documents] --> TE2[Text Encoder] --> VDB[(Vector DB)]
-        I1[Images / charts] --> IE2[Image Encoder\nCLIP / ViT] --> VDB
-        A1[Audio recordings] --> AE2[Audio Encoder\nWhisper → Text → Embed] --> VDB
+        I1[Images / charts] --> IE2[Image Encoder<br/>CLIP / ViT] --> VDB
+        A1[Audio recordings] --> AE2[Audio Encoder<br/>Whisper → Embed] --> VDB
     end
-
     subgraph Query["Query Time"]
-        Q([User Query\n"Show me reports with pump failure images\nfrom Q3"]) --> QEmbed[Multi-modal\nQuery Encoder]
-        QEmbed --> Search[Cross-modal\nSemantic Search]
+        Q([User Query]) --> QEmbed[Multi-modal<br/>Query Encoder]
+        QEmbed --> Search[Cross-modal<br/>Semantic Search]
         VDB --> Search
-        Search --> Retrieved["Retrieved:\n📄 Maintenance report text\n🖼️ Fault image from camera #4\n🔊 Engineer voice note transcript"]
-        Retrieved --> LLM2[Multi-modal LLM\nGPT-4o / Gemini]
-        LLM2 --> Answer([Grounded answer\nwith image + text evidence])
+        Search --> Retrieved[Retrieved context]
+        Retrieved --> LLM2[Multi-modal LLM<br/>GPT-4o / Gemini]
+        LLM2 --> Answer([Grounded answer])
     end
-
-    classDef index fill:#e1f5fe,stroke:#4fc3f7;
-    classDef query fill:#e8f5e9,stroke:#66bb6a;
-    class T1,I1,A1,TE2,IE2,AE2,VDB index;
-    class Q,QEmbed,Search,Retrieved,LLM2,Answer query;
 ```
 
 ---
