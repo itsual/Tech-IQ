@@ -1,4 +1,4 @@
-# Tech IQ #11: MLOps vs. LLMOps — Why Deploying LLMs Is a Different Beast
+# Tech IQ #10: MLOps vs. LLMOps — Why Deploying LLMs Is a Different Beast
 *Your ML Playbook Needs an Upgrade for the Age of Foundation Models*
 
 You've mastered CI/CD for ML. You have model versioning, retraining pipelines, and drift monitors. Now your team wants to ship a GPT-4 powered product — and suddenly none of the old playbook quite fits.
