@@ -175,15 +175,15 @@ mindmap
     AI Foundations
       Neural Networks #4
       GPU TPU Precision #5
-      Multi-Modal AI #15
+      Multi-Modal AI #12
     Data Layer
       Vector Databases #9
-      Data Lakes & Lakehouses #12
+      Data Lakes & Lakehouses #11
       Text-to-SQL LLMs #1
     Deployment & Ops
       CI/CD for ML #2
       Kubernetes & Containers #3
-      MLOps vs LLMOps #11
+      MLOps vs LLMOps #10
     AI Strategy
       RAG vs Fine-Tuning #8
       Agentic AI vs AI Agents #6
