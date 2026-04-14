@@ -1,4 +1,4 @@
-# Tech IQ #15: Multi-Modal AI — When Your Model Can See, Hear, and Read
+# Tech IQ #12: Multi-Modal AI — When Your Model Can See, Hear, and Read
 *Beyond Text: The AI Systems That Perceive the World Like Humans Do*
 
 The first generation of enterprise AI was text-in, text-out. The next generation processes the world the way your best analyst does — reading documents, looking at charts, watching videos, and listening to conversations — all at once.
