@@ -1,4 +1,4 @@
-# Tech IQ #12: Data Lakes, Warehouses & Lakehouses — Picking the Right Storage Architecture
+# Tech IQ #11: Data Lakes, Warehouses & Lakehouses — Picking the Right Storage Architecture
 *The Decision That Determines Whether Your AI Strategy Succeeds or Stalls*
 
 Leaders sign multi-million dollar contracts for Snowflake, Databricks, or Azure Data Lake without a clear picture of what each solves. Here's the map.
