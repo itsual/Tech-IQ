@@ -16,7 +16,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🚀 [Tech IQ #2: CI/CD for ML—It’s Not Just “Pushing Buttons”](https://github.com/itsual/Tech-IQ/tree/main/CI-CD)
+### 🚀 [Tech IQ #2: CI/CD for ML—It's Not Just "Pushing Buttons"](https://github.com/itsual/Tech-IQ/tree/main/CI-CD)
 📂 **Topic:** `CI-CD`  
 🧠 **Insight:** CI/CD in ML includes retraining triggers, dataset versioning, evaluation thresholds—not just Git commits.  
 🔧 **Reality:** ML CI/CD pipelines look like DevOps with data and statistical checkpoints woven in.
@@ -37,7 +37,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 ### 🧬 [Tech IQ #4: How Neural Networks Work – From Neurons to Transformers](https://github.com/itsual/Tech-IQ/tree/main/Neural%20Network)
 📂 **Topic:** `Neural Network`  
 🧠 **Insight:** Neural networks mimic neurons in name, but function as sophisticated algebraic graph flows.  
-🔧 **Reality:** From perceptrons to transformers, the secret lies in how information is weighted and passed—not in “intelligence.”
+🔧 **Reality:** From perceptrons to transformers, the secret lies in how information is weighted and passed—not in "intelligence."
 
 ![Neural Network](https://img.icons8.com/fluency/96/brain.png)
 
@@ -55,7 +55,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 ### 🤖 [Tech IQ #6: Agentic AI ≠ AI Agents](https://github.com/itsual/Tech-IQ/tree/main/AI%20Agents%20Vs%20Agentic%20AI)
 📂 **Topic:** `AI Agents Vs Agentic AI`  
 🧠 **Insight:** An "agent" calls APIs. An agentic AI sets goals, reasons, adapts. Huge difference.  
-🔧 **Reality:** Agentic AI combines memory, planning, context awareness. It’s not automation—it’s orchestration.
+🔧 **Reality:** Agentic AI combines memory, planning, context awareness. It's not automation—it's orchestration.
 
 ![AI Agent](https://img.icons8.com/fluency/96/robot.png)
 
@@ -64,15 +64,58 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 ### 🛡️ [Tech IQ #7: Red Teaming vs Closed UAT — LLMs Need Both](https://github.com/itsual/Tech-IQ/tree/main/UAT%20vs%20Red%20Teaming)
 📂 **Topic:** `UAT vs Red Teaming`  
 🧠 **Insight:** Closed UAT validates use-case readiness. Red Teaming finds vulnerabilities—prompt injections, jailbreaks, and adversarial QA.  
-🔧 **Reality:** UAT = “does it work?” / Red Team = “how can it break?”
+🔧 **Reality:** UAT = "does it work?" / Red Team = "how can it break?"
 
 ![Red Team](https://img.icons8.com/fluency/96/bug.png)
 
 ---
 
-## 📈 How the ML Lifecycle Connects
+### 🔀 [Tech IQ #8: RAG vs. Fine-Tuning — When to Customize Your LLM](https://github.com/itsual/Tech-IQ/tree/main/RAG%20vs%20Fine-Tuning)
+📂 **Topic:** `RAG vs Fine-Tuning`  
+🧠 **Insight:** RAG solves a retrieval problem. Fine-Tuning solves a behavior problem. Confusing them wastes months and millions.  
+🔧 **Reality:** Most enterprise AI problems start as RAG problems. Graduate to fine-tuning only when you have a specific behavioral gap retrieval cannot fix.
 
-## **ML Workflow**
+![RAG](https://img.icons8.com/fluency/96/search-in-cloud.png)
+
+---
+
+### 🗄️ [Tech IQ #9: Vector Databases — The Memory Layer of AI](https://github.com/itsual/Tech-IQ/tree/main/Vector%20Databases)
+📂 **Topic:** `Vector Databases`  
+🧠 **Insight:** Traditional databases find rows by ID. Vector databases find meaning by geometry. Your AI applications cannot work at scale without one.  
+🔧 **Reality:** Embeddings encode semantics as numbers. Vector DBs search those numbers at millisecond speed across millions of documents.
+
+![VectorDB](https://img.icons8.com/fluency/96/database.png)
+
+---
+
+### ⚗️ [Tech IQ #11: MLOps vs. LLMOps — Why Deploying LLMs Is a Different Beast](https://github.com/itsual/Tech-IQ/tree/main/MLOps%20vs%20LLMOps)
+📂 **Topic:** `MLOps vs LLMOps`  
+🧠 **Insight:** In MLOps, the model is the artifact. In LLMOps, the prompt is the artifact. Everything downstream changes as a result.  
+🔧 **Reality:** Prompt versioning, LLM-as-judge evaluation, guardrails, and token cost monitoring are new disciplines your ML team needs to learn.
+
+![MLOps](https://img.icons8.com/fluency/96/settings.png)
+
+---
+
+### 🏗️ [Tech IQ #12: Data Lakes, Warehouses & Lakehouses — Picking the Right Architecture](https://github.com/itsual/Tech-IQ/tree/main/Data%20Lakes%20Warehouses%20and%20Lakehouses)
+📂 **Topic:** `Data Lakes Warehouses and Lakehouses`  
+🧠 **Insight:** Data Warehouses are optimized for SQL. Data Lakes are optimized for cost. Lakehouses give you both — and are the foundation of every modern AI strategy.  
+🔧 **Reality:** The Medallion Architecture (Bronze → Silver → Gold) is the operating model that turns data chaos into business-ready intelligence.
+
+![DataLake](https://img.icons8.com/fluency/96/data-configuration.png)
+
+---
+
+### 👁️ [Tech IQ #15: Multi-Modal AI — When Your Model Can See, Hear, and Read](https://github.com/itsual/Tech-IQ/tree/main/Multi-Modal%20AI)
+📂 **Topic:** `Multi-Modal AI`  
+🧠 **Insight:** Multi-modal AI processes text, images, audio, and video simultaneously — unlocking automation of every information type that previously required human eyes and ears.  
+🔧 **Reality:** GPT-4o, Gemini, and Claude now read scanned invoices, interpret factory floor photos, transcribe meetings, and reason across all of them in one session.
+
+![MultiModal](https://img.icons8.com/fluency/96/artificial-intelligence.png)
+
+---
+
+## 📈 How the AI & ML Ecosystem Connects
 
 ```mermaid
 flowchart LR
@@ -112,7 +155,6 @@ flowchart LR
     %% Connect outcomes
     Value --> Outcomes
 
-    %% Simple styling to make it attractive for executives
     classDef primary fill:#4285F4,stroke:#333,color:white,stroke-width:1px;
     classDef secondary fill:#34A853,stroke:#333,color:white,stroke-width:1px;
     classDef governance fill:#FBBC05,stroke:#333,color:black,stroke-width:1px;
@@ -121,6 +163,32 @@ flowchart LR
     class Dev,Model,Deploy,Cloud,Business,Value primary;
     class Governance,G1,G2,G3,G4 governance;
     class Outcomes,O1,O2,O3,O4 outcomes;
-  ```
+```
+
+---
+
+## 🗺️ Tech-IQ Knowledge Map
+
+```mermaid
+mindmap
+  root((Tech-IQ))
+    AI Foundations
+      Neural Networks #4
+      GPU TPU Precision #5
+      Multi-Modal AI #15
+    Data Layer
+      Vector Databases #9
+      Data Lakes & Lakehouses #12
+      Text-to-SQL LLMs #1
+    Deployment & Ops
+      CI/CD for ML #2
+      Kubernetes & Containers #3
+      MLOps vs LLMOps #11
+    AI Strategy
+      RAG vs Fine-Tuning #8
+      Agentic AI vs AI Agents #6
+      UAT vs Red Teaming #7
+```
+
 ---
 Simplifying tech for decisive leadership. Connect with me on [LinkedIn](https://www.linkedin.com/in/arockialiborious/) for real-talk AI insights.
