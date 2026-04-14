@@ -55,24 +55,24 @@ At the core, multi-modal models learn to embed different types of data into a **
 ```mermaid
 flowchart LR
     subgraph Inputs["Raw Inputs"]
-        I1[Text\n"Describe this chart"]
-        I2[Image\nBarChart.png]
-        I3[Audio\nVoice question.mp3]
+        I1["Text<br/>Describe this chart"]
+        I2["Image<br/>BarChart.png"]
+        I3["Audio<br/>Voice question.mp3"]
     end
 
     subgraph Encoders["Modality-Specific Encoders"]
-        TE[Text Encoder\nTokenizer + Transformer]
-        IE[Image Encoder\nViT / CLIP / ConvNet]
-        AE[Audio Encoder\nWhisper / Wav2Vec]
+        TE["Text Encoder<br/>Tokenizer + Transformer"]
+        IE["Image Encoder<br/>ViT / CLIP / ConvNet"]
+        AE["Audio Encoder<br/>Whisper / Wav2Vec"]
     end
 
     subgraph Shared["Shared Representation Space"]
-        ALIGN["Aligned Embedding Space\nAll modalities mapped to\ncommon vector dimension"]
+        ALIGN["Aligned Embedding Space<br/>All modalities mapped to<br/>common vector dimension"]
     end
 
     subgraph Decode["Generation / Output"]
-        LLM[LLM Decoder\nAttends across all modalities]
-        OUT[Output\n"Q3 revenue grew 24%,\ndriven by APAC expansion"]
+        LLM["LLM Decoder<br/>Attends across all modalities"]
+        OUT["Output<br/>Q3 revenue grew 24%,<br/>driven by APAC expansion"]
     end
 
     I1 --> TE --> ALIGN
