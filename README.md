@@ -88,7 +88,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### ⚗️ [Tech IQ #11: MLOps vs. LLMOps — Why Deploying LLMs Is a Different Beast](https://github.com/itsual/Tech-IQ/tree/main/MLOps%20vs%20LLMOps)
+### ⚗️ [Tech IQ #10: MLOps vs. LLMOps — Why Deploying LLMs Is a Different Beast](https://github.com/itsual/Tech-IQ/tree/main/MLOps%20vs%20LLMOps)
 📂 **Topic:** `MLOps vs LLMOps`  
 🧠 **Insight:** In MLOps, the model is the artifact. In LLMOps, the prompt is the artifact. Everything downstream changes as a result.  
 🔧 **Reality:** Prompt versioning, LLM-as-judge evaluation, guardrails, and token cost monitoring are new disciplines your ML team needs to learn.
@@ -97,7 +97,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 🏗️ [Tech IQ #12: Data Lakes, Warehouses & Lakehouses — Picking the Right Architecture](https://github.com/itsual/Tech-IQ/tree/main/Data%20Lakes%20Warehouses%20and%20Lakehouses)
+### 🏗️ [Tech IQ #11: Data Lakes, Warehouses & Lakehouses — Picking the Right Architecture](https://github.com/itsual/Tech-IQ/tree/main/Data%20Lakes%20Warehouses%20and%20Lakehouses)
 📂 **Topic:** `Data Lakes Warehouses and Lakehouses`  
 🧠 **Insight:** Data Warehouses are optimized for SQL. Data Lakes are optimized for cost. Lakehouses give you both — and are the foundation of every modern AI strategy.  
 🔧 **Reality:** The Medallion Architecture (Bronze → Silver → Gold) is the operating model that turns data chaos into business-ready intelligence.
@@ -106,7 +106,7 @@ Welcome to **Tech-IQ** — a no-jargon, executive-savvy series designed to decod
 
 ---
 
-### 👁️ [Tech IQ #15: Multi-Modal AI — When Your Model Can See, Hear, and Read](https://github.com/itsual/Tech-IQ/tree/main/Multi-Modal%20AI)
+### 👁️ [Tech IQ #12: Multi-Modal AI — When Your Model Can See, Hear, and Read](https://github.com/itsual/Tech-IQ/tree/main/Multi-Modal%20AI)
 📂 **Topic:** `Multi-Modal AI`  
 🧠 **Insight:** Multi-modal AI processes text, images, audio, and video simultaneously — unlocking automation of every information type that previously required human eyes and ears.  
 🔧 **Reality:** GPT-4o, Gemini, and Claude now read scanned invoices, interpret factory floor photos, transcribe meetings, and reason across all of them in one session.
