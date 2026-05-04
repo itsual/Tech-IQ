@@ -153,13 +153,13 @@ The license fee is the smallest number in the TCO. Here is the full picture.
 
 ```mermaid
 flowchart TB
-    subgraph Visible["Visible Costs\n(What you see in the proposal)"]
+    subgraph Visible["Visible Costs (What you see in the proposal)"]
         V1[Software License / API subscription]
         V2[Implementation / integration fee]
         V3[Initial training / fine-tuning]
     end
 
-    subgraph Hidden["Hidden Costs\n(What you discover in production)"]
+    subgraph Hidden["Hidden Costs (What you discover in production)"]
         H1[Token / compute costs at scale\noften 5–10x the license]
         H2[Human oversight and QA\nreviewing AI outputs]
         H3[Data preparation and cleaning\nbefore the model is useful]
@@ -197,18 +197,20 @@ flowchart TB
 ```mermaid
 quadrantChart
     title Vendor Risk Assessment
-    x-axis Low Lock-in → High Lock-in
-    y-axis Low Capability → High Capability
-    quadrant-1 High capability but risky dependency
-    quadrant-2 Ideal zone — capable and portable
-    quadrant-3 Avoid — low value, high switching cost
-    quadrant-4 Low risk, manageable capability
-    "Proprietary fine-tuned model\non vendor infra": [0.85, 0.75]
-    "Open-source model\nself-hosted": [0.15, 0.6]
-    "API wrapper\non OpenAI GPT-4": [0.7, 0.65]
-    "Open model on\nyour cloud": [0.25, 0.65]
-    "Custom RAG\non your data": [0.3, 0.8]
-    "Vendor black box\nno explainability": [0.9, 0.4]
+    x-axis "Low Lock-in" --> "High Lock-in"
+    y-axis "Low Capability" --> "High Capability"
+
+    quadrant-1 "Capable but dependent"
+    quadrant-2 "Ideal zone"
+    quadrant-3 "Avoid"
+    quadrant-4 "Manageable risk"
+
+    "Vendor-hosted fine-tuned model": [0.85, 0.75]
+    "Open-source self-hosted": [0.15, 0.6]
+    "GPT-4 API wrapper": [0.7, 0.65]
+    "Open model in your cloud": [0.25, 0.65]
+    "Custom RAG on your data": [0.3, 0.8]
+    "Vendor black box": [0.9, 0.4]
 ```
 
 ### Vendor Lock-in Questions
